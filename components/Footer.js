@@ -22,14 +22,20 @@ function Footer() {
                         <div data-name="footer-social">
                             <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
                             <div className="flex space-x-4">
-                                <a href="#" className="text-gray-400 hover:text-white">
+                                <a href="#https://x.com/gchainAI" className="text-gray-400 hover:text-white">
                                     <i className="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-white">
+                                <a href="#https://linkedin.com/gchain-ai-9b850a33a/" className="text-gray-400 hover:text-white">
                                     <i className="fab fa-linkedin"></i>
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-white">
+                                <a href="#https://instagram.com/Gain _ChainAI2" className="text-gray-400 hover:text-white">
                                     <i className="fab fa-instagram"></i>
+                                </a>
+                                < a href="#https://github.com/gchain-ai" className="text-gray-400 hover:text-white">
+                                    <i className="fab fa-gitlab"></i>
+                                </a>
+                                <a href="mailto:gainchainai@gmail.com" className="text-gray-400 hover:text-white">
+                                    <i className="fas fa-envelope"></i>
                                 </a>
                             </div>
                         </div>
