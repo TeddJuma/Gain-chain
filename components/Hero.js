@@ -1,5 +1,47 @@
 function Hero() {
     try {
+        // Array of title statements
+        const titleStatements = [
+            "Democratizing Web3 Access",
+            "Empowers users with blockchain tools.",
+            "Streamlines web3 development processes significantly.",
+            "Fosters collaborative web3 innovation ecosystem.",
+            "Democratizes access to web3 technologies.",
+            "Enhances user engagement through incentives.",
+            "Promotes inclusive blockchain education initiatives.",
+        ];
+
+        // Function to cycle through titles
+        function cycleTitles() {
+            let currentTitleIndex = 0;
+            setInterval(() => {
+                currentTitleIndex = (currentTitleIndex + 1) % titleStatements.length;
+                animateTitle(titleStatements[currentTitleIndex]);
+            }, 6000); // Change title every 6 seconds (1 second longer than before)
+        }
+
+        cycleTitles();
+
+        function animateTitle(newTitle) {
+            const titleElement = document.querySelector('.hero-title span');
+
+            // Fade out the current title
+            titleElement.classList.add('fade-out');
+            setTimeout(() => {
+                // Update the text after fade-out completes
+                titleElement.innerText = newTitle;
+
+                // Fade in the new title
+                titleElement.classList.remove('fade-out');
+                titleElement.classList.add('fade-in');
+
+                // Remove fade-in class after animation completes
+                setTimeout(() => {
+                    titleElement.classList.remove('fade-in');
+                }, 2000); // Keep it visible for 2 seconds after fading in
+            }, 2000); // Wait for fade-out to complete
+        }
+
         return (
             <section id="hero" className="hero-section" data-name="hero-section">
                 <div className="hero-image-container" data-name="hero-image-container">
@@ -11,10 +53,10 @@ function Hero() {
                 </div>
                 <div className="hero-content" data-name="hero-content">
                     <h1 className="hero-title" data-name="hero-title">
-                        <span className="gradient-text">Democratizing</span> Web3 Access
+                        <span className="gradient-text">{titleStatements[0]}</span>
                     </h1>
                     <p className="hero-subtitle" data-name="hero-subtitle">
-                    AI-driven blockchain platform enabling creativity, collaboration, and Web3 accessibility.
+                        AI-driven blockchain platform enabling creativity, collaboration, and Web3 accessibility.
                     </p>
                     <div className="hero-buttons" data-name="hero-buttons">
                         <a

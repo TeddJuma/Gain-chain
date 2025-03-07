@@ -51,6 +51,13 @@ function QuantumFlow() {
                 ctx.fillStyle = gradient;
                 ctx.fill();
                 
+                // Add a glowing effect around the node
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.size * 3, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(34, 65, 122, ${0.2 * intensity})`;
+                ctx.lineWidth = 4;
+                ctx.stroke();
+                
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
                 ctx.strokeStyle = `rgba(34, 65, 122, ${0.6 * intensity})`;
@@ -79,7 +86,7 @@ function QuantumFlow() {
             };
             
             const render = () => {
-                ctx.fillStyle = 'rgba(15, 23, 42, 0.1)';
+                ctx.fillStyle = 'rgba(15, 23, 42, 1)';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 
                 nodes.forEach(node => {

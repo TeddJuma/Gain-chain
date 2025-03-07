@@ -26,21 +26,20 @@ function Services() {
         return (
             <section id="services" className="services-section section-padding" data-name="services-section">
                 <div className="container">
-                    <h2 className="section-title" data-name="services-title">
+                    <h2 style={{ color: '#ff9900' }} className="section-title" data-name="services-title">
                         Our Services
                     </h2>
                     <div className="services-grid" data-name="services-grid">
                         {services.map((service, index) => (
                             <div 
                                 key={index} 
-                                className="service-card parallax"
-                                style={{ transform: `translateZ(${(index + 1) * 10}px)` }}
+                                className="service-card"
                                 data-name={`service-card-${index}`}
                             >
                                 <div className="service-icon" data-name={`service-icon-${index}`}>
                                     <i className={`fas ${service.icon}`}></i>
                                 </div>
-                                <h3 className="service-title" data-name={`service-title-${index}`}>
+                                <h3 className="service-title text-white" data-name={`service-title-${index}`}>
                                     {service.title}
                                 </h3>
                                 <p className="service-description" data-name={`service-description-${index}`}>
@@ -58,3 +57,5 @@ function Services() {
         return null;
     }
 }
+
+export default Services;

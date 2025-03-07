@@ -1,6 +1,7 @@
 .features-section {
     padding: 6rem 0;
     position: relative;
+    background: transparent; /* Make background fully transparent */
 }
 
 .features-grid {
@@ -11,20 +12,22 @@
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05); /* Subtle grey overlay */
     border-radius: 16px;
     padding: 2rem;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 8px 20px rgba(25, 42, 86, 0.4); /* Deep blue glow on hover */
 }
 
 .feature-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    background: linear-gradient(135deg, #ff9900, #ff6600); /* Vibrant orange gradient */
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -32,12 +35,44 @@
     margin-bottom: 1.5rem;
 }
 
+.feature-icon i {
+    animation: hover-icon 2s infinite ease-in-out;
+    transition: all 0.3s ease;
+}
+
+@keyframes hover-icon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.feature-icon i:hover {
+    animation-play-state: paused; /* Pause animation on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
+    color: #ff9900; /* Change icon color to orange on hover */
+}
+
 .feature-title {
     font-size: 1.5rem;
+    font-weight: bold;
     margin-bottom: 1rem;
+    color: #ffffff; /* White text for titles */
 }
 
 .feature-description {
+    color: rgba(255, 255, 255, 0.8); /* Light grey text for descriptions */
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
 }

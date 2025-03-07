@@ -9,7 +9,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    background: linear-gradient(135deg, #ff9900, #ff6600); /* Vibrant orange gradient */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     position: relative;
@@ -31,6 +31,7 @@
 
 .chatbot-button:hover {
     transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(255, 153, 0, 0.3); /* Orange glow on hover */
 }
 
 .chatbot-window {
@@ -39,7 +40,7 @@
     right: 20px;
     width: 350px;
     max-height: calc(100vh - 120px);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* Subtle grey overlay */
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -50,7 +51,7 @@
 
 .chat-header {
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* Subtle grey overlay */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
@@ -79,12 +80,12 @@
 }
 
 .user-message {
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(25, 42, 86, 0.2); /* Deep blue background */
     margin-left: auto;
 }
 
 .ai-message {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Subtle grey overlay */
     margin-right: auto;
 }
 
@@ -105,7 +106,7 @@
 }
 
 .chat-send-button {
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    background: linear-gradient(135deg, #ff9900, #ff6600); /* Vibrant orange gradient */
     border: none;
     border-radius: 8px;
     width: 40px;

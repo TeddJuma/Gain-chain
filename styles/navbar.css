@@ -7,7 +7,7 @@
     max-width: 1200px;
     z-index: 1000;
     padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05); /* Subtle grey overlay */
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -52,7 +52,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #6366f1;
+    background: #ff9900; /* Orange underline */
     transition: width 0.3s ease;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .nav-link:hover {
-    color: #6366f1;
+    color: #ff9900; /* Orange color on hover */
 }
 
 .mobile-menu-button {
@@ -88,7 +88,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.05); /* Subtle grey overlay */
         backdrop-filter: blur(10px);
         padding: 1rem;
         margin-top: 1rem;
