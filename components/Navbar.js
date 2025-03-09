@@ -15,7 +15,7 @@ function Navbar() {
             <nav className="navbar" data-name="navbar">
                 <a href="#hero" onClick={(e) => scrollToSection('hero', e)} className="navbar-brand" data-name="navbar-brand">
                     <img 
-                        src="images/Plain Logo.jpg" 
+                        src="images/logo.jpg" 
                         alt="Gain Chain AI Logo" 
                         className="navbar-logo"
                         data-name="navbar-logo"
@@ -32,7 +32,7 @@ function Navbar() {
                 </button>
 
                 <div className={`navbar-nav ${isMenuOpen ? 'active' : ''}`} data-name="navbar-nav">
-                    <a href="#hero" onClick={(e) => scrollToSection('hero', e)} className="nav-link" data-name="nav-link-home">
+                    <a href="index.html" onClick={(e) => scrollToSection('hero', e)} className="nav-link" data-name="nav-link-home">
                         Home
                     </a>
                     <a href="#about" onClick={(e) => scrollToSection('about', e)} className="nav-link" data-name="nav-link-about">
@@ -46,6 +46,9 @@ function Navbar() {
                     </a>
                     <a href="#contact" onClick={(e) => scrollToSection('contact', e)} className="nav-link" data-name="nav-link-contact">
                         Contact
+                    </a>
+                    <a href="auth.html" className="auth-button" data-name="nav-link-auth">
+                        Login / Sign Up
                     </a>
                 </div>
             </nav>

@@ -3,12 +3,12 @@ function Hero() {
         // Array of title statements
         const titleStatements = [
             "Democratizing Web3 Access",
-            "Empowers users with blockchain tools.",
-            "Streamlines web3 development processes significantly.",
-            "Fosters collaborative web3 innovation ecosystem.",
-            "Democratizes access to web3 technologies.",
-            "Enhances user engagement through incentives.",
-            "Promotes inclusive blockchain education initiatives.",
+            "Empowering users with blockchain tools.",
+            "Streamlining web3 development processes significantly.",
+            "Fostering collaborative web3 innovation ecosystem.",
+            "Democratizing access to web3 technologies.",
+            "Enhancing user engagement through incentives.",
+            "Promoting inclusive blockchain education initiatives.",
         ];
 
         // Function to cycle through titles
@@ -46,7 +46,7 @@ function Hero() {
             <section id="hero" className="hero-section" data-name="hero-section">
                 <div className="hero-image-container" data-name="hero-image-container">
                     <img 
-                        src="images\Logo with text.jpg"
+                        src="images\logo.jpg"
                         alt="Gain Chain AI Logo"
                         className="hero-logo-image"
                     />
@@ -68,7 +68,7 @@ function Hero() {
                             <span className="button-shine"></span>
                         </a>
                         <a
-                            href="#contact"
+                            href="auth.html"
                             className="secondary-button"
                             data-name="hero-secondary-button"
                         >

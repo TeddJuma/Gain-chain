@@ -13,6 +13,7 @@ function Footer() {
                         <div data-name="footer-links">
                             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                             <ul className="space-y-2">
+                                <li><a href="index.html" className="text-gray-400 hover:text-white">Home</a></li>
                                 <li><a href="#services" className="text-gray-400 hover:text-white">Services</a></li>
                                 <li><a href="#features" className="text-gray-400 hover:text-white">Features</a></li>
                                 <li><a href="#contact" className="text-gray-400 hover:text-white">Contact</a></li>

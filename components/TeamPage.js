@@ -4,7 +4,7 @@ function TeamPage() {
             {
                 name: "Simon Wandera",
                 role: "Blockchain Developer & AI Engineer",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&h=300",
+                image: "images/simon.jpg",
                 description: "Simon Wandera is a full-stack blockchain developer proficient in AI integration and smart contract development. With a knack for blending cutting-edge technology with pragmatic solutions, Simon drives Gain Chain AI's technical backbone.",
                 links: {
                     portfolio: "https://simonwandera.com",
@@ -15,7 +15,7 @@ function TeamPage() {
             {
                 name: "Joanne Wendoh",
                 role: "Team Lead & Frontend Developer",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&h=300",
+                image: "images/joanne.jpg",
                 description: "Joanne Wendoh infuses creativity and technology as a frontend developer, crafting intuitive and responsive user interfaces. Her designs pave the way for seamless interaction, ensuring that user experience is at the forefront of the Gain Chain AI platform.",
                 links: {
                     portfolio: "https://mswendoh.world/",
@@ -26,7 +26,7 @@ function TeamPage() {
             {
                 name: "Veronicah Anzimbu",
                 role: "Backend Developer & System Architect",
-                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&h=300",
+                image: "images/veronicah.jpg",
                 description: "An expert in scalable architecture and system optimization, Veronicah Anzimbu strengthens Gain Chain AI's structural integrity. Her focus on efficiency and security ensures the robust functionality of the platform.",
                 links: {
                     portfolio: "https://veranzi.com/",
@@ -37,7 +37,7 @@ function TeamPage() {
             {
                 name: "Tedd Juma",
                 role: "Frontend Developer",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300",
+                image: "images/tedd.jpg",
                 description: "A frontend web developer with a keen eye for design and modern aesthetics, Tedd Juma brings Gain Chain AI to life with intuitive and visually stunning interfaces, enhancing the user experience and driving engagement through his passion for innovative design and seamless functionality.",
                 links: {
                     portfolio: "https://teddjuma.netlify.app/",
@@ -48,8 +48,8 @@ function TeamPage() {
         ];
 
         return (
-            <div className="min-h-screen bg-gradient-to-b from-gray-900 to-indigo-900">
-                <nav className="navbar" data-name="team-page-nav">
+            <div className="min-h-screen bg-transparent">
+                {/* <nav className="navbar" data-name="team-page-nav">
                     <a href="/" className="navbar-brand">
                         <img 
                             src="images/Plain Logo.jpg" 
@@ -58,10 +58,11 @@ function TeamPage() {
                         />
                         Gain Chain AI
                     </a>
-                </nav>
+                </nav> */}
                 
                 <div className="container mx-auto px-4 py-24">
-                    <h1 className="text-4xl font-bold text-center mb-12 text-white">Our Team</h1>
+                    <br></br>
+                    <h1 className="text-4xl font-bold text-center mb-12 text-orange-500">Our Team</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {team.map((member, index) => (
                             <div 

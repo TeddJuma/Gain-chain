@@ -7,7 +7,7 @@
     max-width: 1200px;
     z-index: 1000;
     padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.05); /* Subtle grey overlay */
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -52,7 +52,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #ff9900; /* Orange underline */
+    background: #ff9900;
     transition: width 0.3s ease;
 }
 
@@ -61,7 +61,21 @@
 }
 
 .nav-link:hover {
-    color: #ff9900; /* Orange color on hover */
+    color: #ff9900;
+}
+
+.auth-button {
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px #ff9900;
 }
 
 .mobile-menu-button {
@@ -88,7 +102,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.05); /* Subtle grey overlay */
+        background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(10px);
         padding: 1rem;
         margin-top: 1rem;
@@ -105,5 +119,11 @@
         width: 100%;
         text-align: center;
         padding: 0.5rem 0;
+    }
+
+    .auth-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
     }
 }

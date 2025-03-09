@@ -7,9 +7,12 @@ function App() {
                 <main>
                     <Hero />
                     <About />
+                    <Gallery />
                     <Services />
                     <Features />
+                    <Testimonials />
                     <FAQ />
+                    <Team />
                     <Contact />
                 </main>
                 <Chatbot />
