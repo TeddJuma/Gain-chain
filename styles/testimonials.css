@@ -7,14 +7,17 @@
     position: relative;
     height: 600px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .testimonials-scroll {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     animation: scrollUp 60s linear infinite;
+    align-items: center;
 }
 
 .testimonial-card {

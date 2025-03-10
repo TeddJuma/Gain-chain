@@ -1,140 +1,108 @@
 function Gallery() {
     try {
-        const [activeIndex, setActiveIndex] = React.useState(null);
         const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
-        const [showModal, setShowModal] = React.useState(false);
-        const [isDragging, setIsDragging] = React.useState(false);
-        const [startX, setStartX] = React.useState(0);
-        const [scrollLeft, setScrollLeft] = React.useState(0);
+        const [activeInfo, setActiveInfo] = React.useState(null);
         const carouselRef = React.useRef(null);
 
         React.useEffect(() => {
-            const handleResize = () => setIsMobile(window.innerWidth <= 768);
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
+            const handleResize = () => {
+                setIsMobile(window.innerWidth <= 768);
+            };
+            window.addEventListener("resize", handleResize);
+            return () => window.removeEventListener("resize", handleResize);
         }, []);
-
-        const handleMouseDown = (e) => {
-            setIsDragging(true);
-            setStartX(e.pageX - carouselRef.current.offsetLeft);
-            setScrollLeft(carouselRef.current.scrollLeft);
-        };
-
-        const handleMouseUp = () => {
-            setIsDragging(false);
-        };
-
-        const handleMouseMove = (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - carouselRef.current.offsetLeft;
-            const walk = (x - startX) * 2;
-            carouselRef.current.scrollLeft = scrollLeft - walk;
-        };
 
         const galleryItems = [
             {
-                image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0",
+                image: "https://plus.unsplash.com/premium_photo-1681400678259-255b10890b08?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvY2tjaGFpbnxlbnwwfHwwfHx8MA%3D%3D",
                 title: "Blockchain Technology",
                 description: "Decentralized networks powering the future of digital transactions and trust."
             },
             {
-                image: "https://images.unsplash.com/photo-1642104704074-907c0698cbd9",
-                title: "Cryptocurrency Trading",
-                description: "24/7 global markets revolutionizing financial accessibility and freedom."
+                image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29pbnN8ZW58MHx8MHx8fDA%3D",
+                title: "GHC Tokens",
+                description: "Users carn rewards for their contributions and participate in our self-sustaining ecosystem."
             },
             {
-                image: "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d",
+                image: "https://dashboard.hackenproof.com/uploads/bounty_program/logo/65cbbd92fd18041a388df256/logo.png",
+                title: "Internet Computer Protocol",
+                description: "Integrated with Internet Computer Protocol (ICP) for scalable and efficient Web 3 solutions."
+            },
+            {
+                image: "https://plus.unsplash.com/premium_photo-1682309859694-a16c994206af?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U21hcnQlMjBjb250cmFjdHN8ZW58MHx8MHx8fDA%3D",
                 title: "Smart Contracts",
-                description: "Self-executing contracts automating and securing digital agreements."
+                description: "Automated and secure digital agreements transforming industries."
             },
             {
-                image: "https://images.unsplash.com/photo-1639322537228-f710d846310a",
-                title: "DeFi Solutions",
-                description: "Decentralized finance reshaping traditional banking and lending systems."
-            },
-            {
-                image: "https://images.unsplash.com/photo-1639762681057-408e52192e55",
-                title: "NFT Marketplace",
-                description: "Digital ownership and creativity merged in the blockchain ecosystem."
+                image: "https://plus.unsplash.com/premium_photo-1680608979589-e9349ed066d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8QUl8ZW58MHx8MHx8fDA%3D",
+                title: "AI Integration",
+                description: "Machine learning meets decentralized tech to enhance productivity and usability."
             }
         ];
 
-        // Double the items for smooth infinite scroll
-        const extendedItems = [...galleryItems, ...galleryItems];
+        const handleItemClick = (item) => {
+            if (isMobile) {
+                setActiveInfo(item);
+            }
+        };
+
+        const closeOverlay = () => {
+            setActiveInfo(null);
+        };
+
+        const renderGalleryItems = () => {
+            const itemsToRender = isMobile
+                ? [...galleryItems, ...galleryItems, ...galleryItems]
+                : galleryItems;
+
+            return itemsToRender.map((item, index) => (
+                <div
+                    key={index}
+                    className="gallery-item"
+                    onClick={() => handleItemClick(item)}
+                >
+                    <img
+                        src={item.image}
+                        alt={item.title}
+                        className="gallery-image"
+                        loading="lazy"
+                    />
+                    {!isMobile && (
+                        <div className="gallery-info">
+                            <h3 className="gallery-title">{item.title}</h3>
+                            <p className="gallery-description">{item.description}</p>
+                        </div>
+                    )}
+                </div>
+            ));
+        };
 
         return (
-            <section className="gallery-section" data-name="gallery-section">
-                {isMobile ? (
-                    <div className="mobile-gallery" data-name="mobile-gallery">
-                        <div 
-                            className="gallery-carousel"
-                            ref={carouselRef}
-                            onMouseDown={handleMouseDown}
-                            onMouseUp={handleMouseUp}
-                            onMouseLeave={handleMouseUp}
-                            onMouseMove={handleMouseMove}
-                            data-name="gallery-carousel"
-                        >
-                            {extendedItems.map((item, index) => (
-                                <div 
-                                    key={index}
-                                    className="mobile-gallery-item"
-                                    onClick={() => {
-                                        if (!isDragging) {
-                                            setActiveIndex(index % galleryItems.length);
-                                            setShowModal(true);
-                                        }
-                                    }}
-                                    data-name={`mobile-gallery-item-${index}`}
-                                >
-                                    <img src={item.image} alt={item.title} />
-                                </div>
-                            ))}
+            <section id="gallery" className="section-padding">
+                <div className="container max-w-6xl mx-auto px-4">
+                    {/* <h2 className="section-title mb-12 text-center">Gallery</h2> */}
+                    <div
+                        ref={carouselRef}
+                        className={`gallery-carousel ${isMobile ? 'mobile-scroll' : 'desktop-gallery'}`}
+                    >
+                        {renderGalleryItems()}
+                    </div>
+
+                    {isMobile && activeInfo && (
+                        <div className="overlay-modal" onClick={closeOverlay}>
+                            <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+                                <h3 className="gallery-title">{activeInfo.title}</h3>
+                                <p className="gallery-description">{activeInfo.description}</p>
+                            </div>
                         </div>
-                        {showModal && (
-                            <div 
-                                className="mobile-modal"
-                                onClick={() => setShowModal(false)}
-                                data-name="mobile-gallery-modal"
-                            >
-                                <div className="modal-content">
-                                    <img 
-                                        src={galleryItems[activeIndex].image} 
-                                        alt={galleryItems[activeIndex].title} 
-                                    />
-                                    <div className="modal-text">
-                                        <h3>{galleryItems[activeIndex].title}</h3>
-                                        <p>{galleryItems[activeIndex].description}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                ) : (
-                    <div className="desktop-gallery" data-name="desktop-gallery">
-                        {galleryItems.map((item, index) => (
-                            <div 
-                                key={index}
-                                className={`gallery-item ${activeIndex === index ? 'active' : ''}`}
-                                onMouseEnter={() => setActiveIndex(index)}
-                                onMouseLeave={() => setActiveIndex(null)}
-                                data-name={`desktop-gallery-item-${index}`}
-                            >
-                                <img src={item.image} alt={item.title} />
-                                <div className="gallery-item-content">
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
+                    )}
+                </div>
             </section>
         );
     } catch (error) {
-        console.error('Gallery component error:', error);
-        reportError(error);
+        console.error("Error rendering Gallery section:", error);
         return null;
     }
 }
+
+export default Gallery;
