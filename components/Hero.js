@@ -68,7 +68,7 @@ function Hero() {
                             <span className="button-shine"></span>
                         </a>
                         <a
-                            href="auth.html"
+                            href="countdown.html"
                             className="secondary-button"
                             data-name="hero-secondary-button"
                         >

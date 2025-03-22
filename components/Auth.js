@@ -53,9 +53,7 @@ function Auth() {
 
         return (
             <div data-name="auth-root-container">
-                <div className="quantum-flow-container" data-name="quantum-flow-container">
-                    <div className="quantum-flow" data-name="quantum-flow"></div>
-                </div>
+                {/* Remove the quantum-flow-container div since it's now handled by the AuthApp */}
                 <section className="auth-section" data-name="auth-section">
                     <div className="auth-container" data-name="auth-container">
                         <div className="auth-header" data-name="auth-header">

@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Sign Up - Gain Chain AI</title>
+    <title>Coming Soon - Gain Chain AI</title>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="styles/globals.css" rel="stylesheet">
-    <link href="styles/auth.css" rel="stylesheet">
+    <link href="styles/countdown.css" rel="stylesheet">
     <link href="styles/animations.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-    <div id="auth-root"></div>
+    <div id="countdown-root"></div>
     <script type="text/babel" src="components/QuantumFlow.js"></script>
-    <script type="text/babel" src="components/Auth.js"></script>
+    <script type="text/babel" src="components/Countdown.js"></script>
     <script type="text/babel">
-        function AuthApp() {
+        function CountdownApp() {
             return (
                 <>
                     <QuantumFlow />
-                    <Auth />
+                    <Countdown />
                 </>
             );
         }
-        const root = ReactDOM.createRoot(document.getElementById('auth-root'));
-        root.render(<AuthApp />);
+        
+        const root = ReactDOM.createRoot(document.getElementById('countdown-root'));
+        root.render(<CountdownApp />);
     </script>
 </body>
 </html>

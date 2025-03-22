@@ -41,7 +41,7 @@ function TeamPage() {
                 description: "A frontend web developer with a keen eye for design and modern aesthetics, Tedd Juma brings Gain Chain AI to life with intuitive and visually stunning interfaces, enhancing the user experience and driving engagement through his passion for innovative design and seamless functionality.",
                 links: {
                     portfolio: "https://teddjuma.netlify.app/",
-                    linkedin: "www.linkedin.com/in/tedd-juma",
+                    linkedin: "https://linkedin.com/in/tedd-juma",
                     github: "https://github.com/TeddJuma"
                 }
             }
